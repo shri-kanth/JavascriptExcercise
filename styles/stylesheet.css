@@ -1,0 +1,25 @@
+html, body {
+       margin : 0;
+       height : 100%;
+}
+
+
+.point{
+   margin : 0;
+   position : absolute;
+   width : 20px;
+   height : 20px;
+   border-radius : 100%;
+   background-color : blue;
+   z-index : 1;
+}
+
+#cover{
+
+	position : absolute;
+	background-color : white;
+	border-style : dashed;
+	border-color : green;
+	//border-radius : 100%;
+}
+
