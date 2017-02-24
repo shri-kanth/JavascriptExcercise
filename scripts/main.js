@@ -5,17 +5,22 @@ var max_y,min_y;
 var c;
 var r = 20;
 var del = false;
+var circle;
+
+window.onload = function() {
+	circle = confirm("Choose   'OK' 	for Circle cover\nChoose 'Cancel' for Square cover");
+}
 
 var pointd = function(event) 
 {
 	var Mx = false,My = false, Mnx = false,Mny = false;
 	if(event.target === max_x)
 		Mx = true;
-	else if(event.target === min_x)
+	if(event.target === min_x)
 		Mnx = true;
-	else if(event.target === max_y)
+	if(event.target === max_y)
 		My = true;
-	else if(event.target === min_y)
+	if(event.target === min_y)
 		Mny = true;
 	document.body.removeChild(event.target);
 	del = true;
@@ -27,10 +32,8 @@ var pointd = function(event)
 	
 	if(Mx)
           	findMaxX();
-
         if(Mnx)
 		findMinX();
-		
         if(My)
 		findMaxY();		
 	if(Mny) 
@@ -90,6 +93,8 @@ var adjustCover = function()
           at.value = "cover";
 	  c = document.createElement("div");
           c.setAttributeNode(at);
+	  if(circle)
+		c.style.borderRadius = 100+"%";
           document.body.appendChild(c);
 	  covered = true;
 	}
